@@ -3,7 +3,8 @@ FROM python:3.8-slim
 WORKDIR /app
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir -r requirements.txt
+RUN python -m pip install --no-cache-dir "pip<24.1" && \
+    pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
