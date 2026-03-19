@@ -1,0 +1,76 @@
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi] INFO:     Started server process [1]
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi] INFO:     Waiting for application startup.
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi] INFO:     Application startup complete.
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi] INFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi] INFO:     10.42.3.45:36488 - "GET /docs HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi] INFO:     10.42.3.45:46702 - "GET /users HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi] INFO:     10.42.3.45:46712 - "GET /docs HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi] INFO:     10.42.3.45:58266 - "GET /users/count HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi] INFO:     10.42.3.45:52134 - "GET /openapi.json HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi] INFO:     10.42.3.45:43336 - "GET /openapi.json HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi] INFO:     10.42.3.45:37992 - "GET /users/1 HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi] INFO:     10.42.3.45:37992 - "DELETE /1 HTTP/1.1" 204 No Content
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi] ERROR:    Exception in ASGI application
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi] Traceback (most recent call last):
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]   File "/usr/local/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 369, in run_asgi
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]     result = await app(self.scope, self.receive, self.send)
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]   File "/usr/local/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 59, in __call__
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]     return await self.app(scope, receive, send)
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]   File "/usr/local/lib/python3.8/site-packages/fastapi/applications.py", line 199, in __call__
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]     await super().__call__(scope, receive, send)
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]   File "/usr/local/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]     await self.middleware_stack(scope, receive, send)
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]   File "/usr/local/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]     raise exc from None
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]   File "/usr/local/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]     await self.app(scope, receive, _send)
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]   File "/usr/local/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]     raise exc from None
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]   File "/usr/local/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]     await self.app(scope, receive, sender)
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]   File "/usr/local/lib/python3.8/site-packages/starlette/routing.py", line 580, in __call__
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]     await route.handle(scope, receive, send)
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]   File "/usr/local/lib/python3.8/site-packages/starlette/routing.py", line 241, in handle
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]     await self.app(scope, receive, send)
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]   File "/usr/local/lib/python3.8/site-packages/starlette/routing.py", line 55, in app
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]     await response(scope, receive, send)
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]   File "/usr/local/lib/python3.8/site-packages/starlette/responses.py", line 143, in __call__
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]     await send({"type": "http.response.body", "body": self.body})
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]   File "/usr/local/lib/python3.8/site-packages/starlette/exceptions.py", line 68, in sender
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]     await send(message)
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]   File "/usr/local/lib/python3.8/site-packages/starlette/middleware/errors.py", line 156, in _send
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]     await send(message)
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]   File "/usr/local/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 465, in send
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]     output = self.conn.send(event)
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]   File "/usr/local/lib/python3.8/site-packages/h11/_connection.py", line 468, in send
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]     data_list = self.send_with_data_passthrough(event)
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]   File "/usr/local/lib/python3.8/site-packages/h11/_connection.py", line 501, in send_with_data_passthrough
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]     writer(event, data_list.append)
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]   File "/usr/local/lib/python3.8/site-packages/h11/_writers.py", line 58, in __call__
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]     self.send_data(event.data, write)
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]   File "/usr/local/lib/python3.8/site-packages/h11/_writers.py", line 78, in send_data
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi]     raise LocalProtocolError("Too much data for declared Content-Length")
+[pod/fastapi-5ccf8b8dd5-wgwjb/fastapi] h11._util.LocalProtocolError: Too much data for declared Content-Length
+[pod/fastapi-5ccf8b8dd5-kqvln/fastapi] INFO:     Started server process [1]
+[pod/fastapi-5ccf8b8dd5-kqvln/fastapi] INFO:     Waiting for application startup.
+[pod/fastapi-5ccf8b8dd5-kqvln/fastapi] INFO:     Application startup complete.
+[pod/fastapi-5ccf8b8dd5-kqvln/fastapi] INFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)
+[pod/fastapi-5ccf8b8dd5-kqvln/fastapi] INFO:     10.42.3.45:43272 - "GET /openapi.json HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-kqvln/fastapi] INFO:     10.42.3.45:48754 - "GET /users/count HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-kqvln/fastapi] INFO:     10.42.3.45:52956 - "GET /docs HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-kqvln/fastapi] INFO:     10.42.3.45:40128 - "GET /openapi.json HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-kqvln/fastapi] INFO:     10.42.3.45:41906 - "GET /docs HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-kqvln/fastapi] INFO:     10.42.3.45:41484 - "POST / HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-kqvln/fastapi] INFO:     10.42.3.45:44130 - "GET /users HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-bdk8q/fastapi] INFO:     Started server process [1]
+[pod/fastapi-5ccf8b8dd5-bdk8q/fastapi] INFO:     Waiting for application startup.
+[pod/fastapi-5ccf8b8dd5-bdk8q/fastapi] INFO:     Application startup complete.
+[pod/fastapi-5ccf8b8dd5-bdk8q/fastapi] INFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)
+[pod/fastapi-5ccf8b8dd5-bdk8q/fastapi] INFO:     10.42.3.45:48322 - "GET /docs HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-bdk8q/fastapi] INFO:     10.42.3.45:40548 - "GET /docs HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-bdk8q/fastapi] INFO:     10.42.3.45:60404 - "GET /docs HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-bdk8q/fastapi] INFO:     10.42.3.45:46352 - "GET /users HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-bdk8q/fastapi] INFO:     10.42.3.45:51712 - "GET /docs HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-bdk8q/fastapi] INFO:     10.42.3.45:35834 - "GET /users HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-bdk8q/fastapi] INFO:     10.42.3.45:58530 - "GET /users/count HTTP/1.1" 200 OK
+[pod/fastapi-5ccf8b8dd5-bdk8q/fastapi] INFO:     10.42.3.45:53214 - "PUT /users/1 HTTP/1.1" 200 OK

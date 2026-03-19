@@ -51,7 +51,7 @@ def create_user(user: User):
 
 
 @user.put(
-    "users/{id}", tags=["users"], response_model=User, description="Update a User by Id"
+    "/users/{id}", tags=["users"], response_model=User, description="Update a User by Id"
 )
 def update_user(user: User, id: int):
     conn.execute(
